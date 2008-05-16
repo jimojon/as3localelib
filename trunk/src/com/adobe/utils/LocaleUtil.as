@@ -60,7 +60,7 @@ package com.adobe.utils
 		*	@playerversion Flash 9.0
 		*	@tiptext
 		*/
-		public static function sortLanguagesByPreference(appLocales:Array, systemPreferences:Array, ultimateFallbackLocale:String=null, addAll:Boolean=false):Array{
+		public static function sortLanguagesByPreference(appLocales:Array, systemPreferences:Array, fallbackLocale:String=null, keepAll:Boolean=false):Array{
 			var result:Array = [];
 			var haveLocale:Object = {};
 			
