@@ -50,9 +50,9 @@ package com.adobe.utils
 		* 
 		* 	@param appLocales A list of locales supported by the application.
 		* 	@param systemPreferences The locale chain of user preffered locales.
-		* 	@param ultimateFallbackLocale The ultimate fallback locale that will be used when no locale from systemPreference matches 
+		* 	@param fallbackLocale The ultimate fallback locale that will be used when no locale from systemPreference matches 
 		* 								  a locale from application supported locale list.
-		* 	@param addAll When true, adds all the non-matching locales at the end of the result list preserving the given order.
+		* 	@param keepAll When true, adds all the non-matching locales at the end of the result list preserving the given order.
 		*
 		*	@return A locale chain that matches user preferences order. 
 		*
@@ -79,16 +79,16 @@ package com.adobe.utils
 			var locales:Array = prepare(appLocales);
 			var preferenceLocales:Array = prepare(systemPreferences);
 		
-			if(ultimateFallbackLocale&&ultimateFallbackLocale!=''){
-				ultimateFallbackLocale = ultimateFallbackLocale.toLowerCase().replace(/-/g,'_');
+			if(fallbackLocale&&fallbackLocale!=''){
+				fallbackLocale = fallbackLocale.toLowerCase().replace(/-/g,'_');
 				var found:Boolean = false;
 				for(i=0, l=preferenceLocales.length; i<l; i++){
-					if(preferenceLocales[i]==ultimateFallbackLocale){
+					if(preferenceLocales[i]==fallbackLocale){
 						found = true;
 					}
 				}
 				if(!found){
-					preferenceLocales.push(ultimateFallbackLocale);
+					preferenceLocales.push(fallbackLocale);
 				}
 			}
 			
