@@ -135,8 +135,7 @@ package com.adobe.utils
 				}
 				
 			}
-			var addAll:Boolean = (typeof addAll=='undefined')?true:addAll;
-			if(addAll){
+			if(keepAll){
 				// check what locales are not already loaded and push them. 
 				// using the "for" because we want to preserve order
 				for(j=0, k=locales.length; j<k; j++){
