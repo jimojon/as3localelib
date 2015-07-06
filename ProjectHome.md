@@ -1,0 +1,1 @@
+The localelib project is an ActionScript 3 Library that provides a function that allows developers to sort languages used in their Flex or AIR applications using system preferences.
